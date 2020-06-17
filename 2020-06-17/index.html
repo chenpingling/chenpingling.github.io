@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Chenpingling's Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .imgbox {
+      display: grid;
+      height: 100%;
+    }
+
+    .center-fit {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <br>
+
+    <div class='jumbotron'>
+      <h1 class='display-4'>2020-06-17 Blazor WebAssembly</h1>
+      <p>
+      跟著視頻  Modern Web UI with Blazor WebAssembly，演練一下。
+      </p>
+      <a class='btn btn-primary' href='https://channel9.msdn.com/Events/Build/2020/BOD104'>查看視頻</a>
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      這位 Steve Sanderson 是主導 Blazor WebAssembly 的靈魂人物。講解清楚。
+
+    </div>
+
+
+    <div class="imgbox">
+      <img class="center-fit" src='img/0.png'>
+    </div>
+
+    <hr>
+    <div class="alert alert-primary" role="alert">TA 先以命令行的方式創建項目。</div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/1.png" alt="1.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">我跟著做但沒有成功，沒有這個模版，上網找了答案，要加裝。</div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/2.png" alt="2.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">外形來看，有運行起來，有一點不一樣是目前本地在我這電腦本地 https 仍視為 Not Secure。這是另一個主題。 </div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/3.png" alt="3.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">終究是要安裝VS2019，記錄一下下載的速度可以每秒2MB。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/4.png" alt="4.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">視頻上的範例有很精采的模擬汽車出租回來時的檢查。</div>
+
+    <div class="imgbox">
+      <img class="center-fit" src="img/5.png" alt="5.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">標準做法：(1)先在github Fork (2)在本地 git clone (3)用VS2019打開 solution or project (4)Build and Debug<br>代碼OK，可以運行，先註冊用戶再登入。</div>
+
+    <div class="imgbox">
+      <img class="center-fit" src="img/6.png" alt="6.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">在我的VS2019運行起來的，使用三種不同的流覽器，都很正常。這項目是合乎
+      <a href='https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps'>PWA</a>。就可以像App一樣安裝在本地，可以有個icon在電腦或手機畫面上。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/7.png" alt="7.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">果然可以下載成本地App來運行。</div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/8.png" alt="8.png"></div>
+
+    
+      <hr>
+<div class='jumbotron'>
+ 
+  <p>
+  這視頻還有好幾主題，做出了很好演示。有完整代碼在這裡，<a class='btn btn-primary' href='https://github.com/SteveSandersonMS/CarChecker'>SteveSandersonMS/CarChecker on Github</a>
+  </p>
+ <hr>
+  <h3> PWA</h3>
+  <p>
+  Progressive Web Apps are web apps that use emerging web browser APIs and features along with traditional progressive enhancement strategy to bring a native app-like user experience to cross-platform web applications. <a href='https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps'>詳細請看 MDN web docs</a>。
+  </p>
+   
+
+</div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
