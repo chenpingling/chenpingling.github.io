@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Chenpingling's Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .imgbox {
+      display: grid;
+      height: 100%;
+    }
+
+    .center-fit {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <br>
+
+    <div class='jumbotron'>
+      <h1 class='display-4'>2020-06-18 ASP.NET Core Service</h1>
+      <p>
+      ASP.NET Core Web Application 強烈使用 Service。這系列教程很完整傳遞這個概念。
+      </p>
+      <a class='btn btn-primary' href='https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Adding-a-Service-to-an-ASPNET-Core-Website-4-of-13'>查看視頻</a>
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+     教程視頻兩位主角： Scott Hanselman 和 Leslie Richardson 。
+
+    </div>
+
+
+    <div class="imgbox">
+      <img class="center-fit" src='img/0.png'>
+    </div>
+
+    <hr>
+    <div class="alert alert-primary" role="alert">原本從JSON檔案讀資料出來，也就是幾行的代碼，但是這裡開始"做大"。先定義出單獨的一個Service, 其中使用了配置信息，可以方便定位到這個JSON檔案，也為佈署做了前期準備。</div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/1.png" alt="1.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">在不同的教程都說了一樣的一件事：ASP.NET 其實是命令程序的延伸。框架是一樣，在版本3起使用了這個HostBuilder, 畫面黃底的部份，就是啟用  Startup。</div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/2.png" alt="2.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">在 Startup 裡啟用了剛才新建的 Service 。 </div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/3.png" alt="3.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">在主頁後的Model 準備調用這個 Service。這裡最大的差別就是，不是直接去定義 Service 的地方取用，而是透過 Startup 的整個服務機制運行。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/4.png" alt="4.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">在頁面上要調用數據，準備的接口就是 Model。</div>
+
+    <div class="imgbox">
+      <img class="center-fit" src="img/5.png" alt="5.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">教程裡很細心故意演示一個BUG。</div>
+
+    <div class="imgbox">
+      <img class="center-fit" src="img/6.png" alt="6.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      然後在適當地方解決了問題。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/7.png" alt="7.png"></div>
+    <hr>
+    <div class="alert alert-primary" role="alert">整個數據最具代表的產品名稱先在頁面上出現。後續的畫面資料要調試，有大一部份是美工部份。</div>
+    <div class="imgbox">
+      <img class="center-fit" src="img/8.png" alt="8.png"></div>
+
+    
+      <hr>
+<div class='jumbotron'>
+ 
+  <p>
+  現在再來讀教程的這部份簡介，有些部份會清楚些了。  </p>
+ <hr>
+  
+  <p>
+    ASP.NET uses a technique called "dependency injection" that's built right in. That lets us make classes called "services" that we can make available to any other classes in our website. </p>
+   
+
+</div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
