@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Chenpingling's Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .imgbox {
+      display: grid;
+      height: 100%;
+    }
+
+    .center-fit {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <br>
+
+    <div class='jumbotron'>
+      <h1 class='display-4'>2020-06-21 
+        ASP.NET -  Blazor</h1>
+      <p>
+        <a class='btn btn-primary' href='https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Introducing-Blazor-Razor-Components-10-of-13'>10 of 13 Razor components 查看視頻</a>
+       想像成一個有特定功能的組件，在這裡就是產品型錄。
+
+       
+
+      </p>
+      <p>
+        <a class='btn btn-primary' href='https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Introducing-Blazor-Structure-and-Debugging-11-of-13'>11 of 13 Structure and Debugging 查看視頻</a>
+       在產品型錄上可點選單項，並且評分。
+
+       
+
+      </p>
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+     <span style="font-size: 150%">新建 Components 目錄</span>，和 Controllers, Models, Pages 等同一級別。在這目錄裡新建 ProductList.razor 檔案。
+     將原本在 index.cshtml 顯示產品型錄的代碼先搬過來。但是有幾點要先處理才能恢復原本的的列表功能。
+     <div style='margin-left: 30px;'>
+     <ol>
+       <li>ProductList.razor 的部分
+         <pre>
+          @using Microsoft.AspNetCore.Components.Web
+          @using ContosoCrafts.WebSite.Models
+          @using ContosoCrafts.WebSite.Services
+          @inject JsonFileProductService ProductService
+
+          &lt;div class="card-columns">
+            @foreach (var product in ProductService.GetProducts())
+            ...
+         </pre>
+       </li>
+       <li>Startup.cs 的部分
+        <pre>
+          public void ConfigureServices(IServiceCollection services)
+          {
+              services.AddRazorPages();
+              services.AddServerSideBlazor();
+              ...
+    
+          public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+          {
+              ...
+
+              app.UseEndpoints(endpoints =>
+              {
+                  endpoints.MapRazorPages();
+                  endpoints.MapControllers();
+                  endpoints.MapBlazorHub();
+              ...    
+        </pre>
+      </li>
+      <li>Index.cshtml 的部分
+        <pre>
+          @page
+          @using ContosoCrafts.WebSite.Components
+          ...
+          @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+          &lt;script src="_framework/blazor.server.js"></script>
+        </pre>
+      </li>
+     </ul>
+    </div>
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/0.png'>
+    </div>
+
+<div class='jumbotron'>
+ 
+  <h3>
+    整個概念，和從 JSON 檔案獲得型錄的服務是一樣的。<br>
+    應該先把這個 "做大" 的機制確認後，再來在型錄上增加點選評分的功能。
+
+  </h3>
+    因為在型錄上增加點選評分的功能，是另一個 ASP.NET 創新 Blazor 用來處理傳統 JavaScript 的新框架。
+  
+</div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
