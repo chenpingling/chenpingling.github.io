@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Chenpingling's Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .imgbox {
+      display: grid;
+      height: 100%;
+    }
+
+    .center-fit {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <br>
+
+    <div class='jumbotron'>
+      <h1 class='display-4'>2020-06-22
+        .NET Generic Host</h1>
+      <p>
+        <a class='btn btn-primary'
+          href='https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1'>查看英文</a>
+        .NET Generic Host - The ASP.NET Core templates create a .NET Core Generic Host, HostBuilder.
+
+
+
+      </p>
+      <p>
+        <a class='btn btn-primary'
+          href='https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1'>繁體中文</a>
+        .NET 泛型主機 - ASP.NET Core 範本會建立 .NET Core 泛型主機HostBuilder。
+
+
+
+      </p>
+
+      <p>
+        <a class='btn btn-primary'
+          href='https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1'>简体中文</a>
+        .NET 通用主机 - ASP.NET Core 模板会创建一个 .NET Core 泛型主机 HostBuilder。
+
+
+
+      </p>
+
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">.NET Generic Host</span> 用比喻來說，就像幾十層大樓的整個結構體和基礎設施。對於三樓沒有沒電梯的建築而行，是完全不同的概念。
+      如同這文檔的說明，包括了 DI 和 Logging 等等。截圖故意有左邊的部份，就是以後如果要找這部份的主題，甚至就是這一頁，有個方便的入口。
+      <div style='margin-left: 30px;'>
+
+
+
+      </div>
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/0.png'>
+    </div>
+
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">ASP.NET Core Web Application</span> 基本模版的程序入口是 Program.cs。
+      <div style='margin-left: 30px;'>
+
+        <pre>
+          public class Program
+          {
+              public static void Main(string[] args)
+              {
+                  CreateHostBuilder(args).Build().Run();
+              }
+      
+              public static IHostBuilder CreateHostBuilder(string[] args) =>
+                  Host.CreateDefaultBuilder(args)
+                      .ConfigureWebHostDefaults(webBuilder =>
+                      {
+                          webBuilder.UseStartup<Startup>();
+                      });
+          }
+         </pre>
+        這是現在 C# 主流的寫法，如果是命令行的 Hello World，就是直接在 Main 打印。
+        而這個 ASP.NET 的 App 就是先建一個 Host, 中文就是主機，不管是 Host 或是主機，肯定無法描述一個很大的建築物的框架和基礎設施。
+        但是最起碼給了一個合理概略性的命名。
+      </div>
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/1.png'>
+    </div>
+
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">Dependency injection </span>
+
+      放到左邊的 [Filter by title] 就可以看到這個主題的頁面。
+      <br>
+      <a
+        href='https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1'>https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1</a>
+
+      <br>
+      DI
+      是第一個大主題，其涵蓋的範圍和深度可以是幾個小時的密集觀念和實做的課程。用比喻來講，這是幾十層甚至摩天大樓的內部運行機制。以消防設施為例，建構時，要預留業界規格空間，到時候在適當時機安裝上去。講的是規格，不是特定品牌的實際產品。其配套設施的概念也是如此。這也是為什麼大廠，不管是做硬件或是軟件的，都在爭取製定規格。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/2.png'>
+    </div>
+
+ 
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">Logging </span>
+
+      也是如此。
+      <br>
+      <a
+        href='https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1'>https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1</a>
+
+      <br>
+      早期，相信有很多歷史原因，有許多第三方的providers。
+      現在基本上，都已集成有用，除非有很大的特別原因，直接使用 .NET 系統，相對容易維護。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/3.png'>
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">第三方的 </span>
+
+     logging providers
+        </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/4.png'>
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">Log4Net </span>
+
+      有碰到。
+      <br>
+      <a
+        href='https://logging.apache.org/log4net/'>https://logging.apache.org/log4net/</a>
+
+      <br>
+      有折騰過些時間。後來是使用 NuGet Package Manager 搞定。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/5.png'>
+    </div>
+
+
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">Log4Net完成歷使命 </span>
+
+      ，現已休眠。<br>根據現在 .NET 的平台機制，替換另一注冊的服務，是相對容易。前提是，要在什麼時機將現有項目有計畫升級到 .NET?     
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/6.png'>
+    </div>
+
+
+    <div class='jumbotron'>
+
+      <h3>
+        整個概念，和從 JSON 檔案獲得型錄的服務是一樣的。<br>
+        應該先把這個 "做大" 的機制確認後，再來在型錄上增加點選評分的功能。
+
+      </h3>
+      因為在型錄上增加點選評分的功能，是另一個 ASP.NET 創新 Blazor 用來處理傳統 JavaScript 的新框架。
+
+    </div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
