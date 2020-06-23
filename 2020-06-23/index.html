@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Chenpingling's Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .imgbox {
+      display: grid;
+      height: 100%;
+    }
+
+    .center-fit {
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <br>
+
+    <div class='jumbotron'>
+      <h1 class='display-4'>2020-06-23
+        LINQ</h1>
+      <p>
+        <a class='btn btn-primary' href='https://docs.djangoproject.com/en/3.0/ref/databases/'>Django 官方支持的
+          Databases</a>
+      <div style='margin-left: 30px;'>
+        <ul>
+          <li> PostgreSQL</li>
+          <li> MariaDB</li>
+          <li> MySQL</li>
+          <li> Oracle</li>
+          <li> SQLite</li>
+
+
+
+
+
+
+        </ul>
+
+      </div>
+
+      </p>
+      <p>
+        <a class='btn btn-primary' href='https://docs.djangoproject.com/en/3.0/ref/databases/#third-party-notes'>Django
+          仍有第三方支持
+          Microsoft SQL Server</a>
+
+
+
+
+      </p>
+
+      <p>
+        <a class='btn btn-primary' href='https://en.wikipedia.org/wiki/Language_Integrated_Query'>Language Integrated
+          Query (LINQ, pronounced "link") </a>
+        原本就設計來服務 .NET 的。
+
+
+
+      </p>
+      <hr>
+      如果單獨比較 Object-relational mapping 的話，Django 是明顯勝出的。然而 .NET 整合出的平台，所能做出的產品是超越 Django 。以編程人員的立場而這，樂見兩者有那麼一天，可以互通。
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">LINQ 有兩種寫法</span> Query
+      語法，https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-projection，Method
+      語法,https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-projection。
+      <div style='margin-left: 30px;'>
+        <pre>
+  //Query syntax:
+  IEnumerable<int> numQuery1 =
+      from num in numbers
+      where num % 2 == 0
+      orderby num
+      select num;
+
+  //Method syntax:
+  IEnumerable<int> numQuery2 = 
+    numbers.Where(num => num % 2 == 0).OrderBy(n => n);
+
+</pre>
+
+
+      </div>
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/0.png'>
+    </div>
+
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">dotnet-try 沒成功</span> https://github.com/dotnet/try-samples
+      <div style='margin-left: 30px;'>
+
+        和一些人一樣，遇到報錯，https://github.com/dotnet/try-samples/issues/59
+      </div>
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/1.png'>
+    </div>
+
+    <hr>
+    <div class="alert alert-primary" role="alert">
+      <span style="font-size: 150%">EF Core </span>
+
+      是可以透過 NuGet Package Manager Console 以命令行方式生成 Entity classes。
+      <p>
+        PM> Scaffold-DbContext 'Data Source=MARK10\SQLEXPRESS02;Initial Catalog=X***;Integrated Security=True'
+        Microsoft.EntityFrameworkCore.SqlServer' Microsoft.EntityFrameworkCore.SqlServer
+      </p>
+      
+      必需要先安裝
+      <div style="margin-left: 30px;">
+        <ul>
+          <li>Microsoft.EntityFrameworkCore</li>
+          <li>Microsoft.EntityFrameworkCore.Design</li>
+          <li>Microsoft.EntityFrameworkCore.SqlServer</li>
+          <li>Microsoft.EntityFrameworkCore.Tools</li>
+
+        </ul>
+      </div>
+      MSSQL 可以全備的方式 restore bak 檔案。
+    </div>
+    <div class="imgbox">
+      <img class="center-fit" src='img/2.png'>
+    </div>
+
+
+    <div class='jumbotron'>
+
+      MSSQL 的管理要單獨練習。EF Core Query 的語句可以在 命令行的項目單獨練習。根據實做經驗，做成桌面應用的控件的確最強，可惜只能運用在 Windows 環境。
+    </div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
